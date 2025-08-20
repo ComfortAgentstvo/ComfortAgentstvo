@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Comfort Agentstvo - Uylar Ro‘yxati</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="hdr">
+  <div class="container topbar">
+    <div class="brand">
+      COMFORT AGENTSTVO
+    </div>
+    <div class="actions">
+      <input type="text" id="searchInput" placeholder="Qidirish...">
+      <button id="addBtn" class="btn-primary">+ Uy qo‘shish</button>
+    </div>
+  </div>
+</header>
+
+<main class="container">
+  <h2 class="section-title">Barcha Uylar</h2>
+  <div id="houseList" class="grid"></div>
+</main>
+
+<!-- Uy qo‘shish / tahrirlash modal -->
+<div class="modal-backdrop" id="modal">
+  <div class="modal">
+    <div class="body">
+      <h2>Uy Ma’lumotlari</h2>
+      <form id="houseForm">
+        <div class="field">
+          <label>Manzil</label>
+          <input type="text" id="houseAddress" required>
+        </div>
+        <div class="field">
+          <label>Narxi</label>
+          <input type="number" id="housePrice" required>
+        </div>
+        <div class="field">
+          <label>Xonalar soni</label>
+          <input type="number" id="houseRooms" required>
+        </div>
+        <div class="field">
+          <label>Maydon (m²)</label>
+          <input type="number" id="houseSize" required>
+        </div>
+        <div class="field">
+          <label>Egasining ismi</label>
+          <input type="text" id="houseOwner" required>
+        </div>
+        <div class="field">
+          <label>Telefon raqami</label>
+          <input type="text" id="housePhone" required>
+        </div>
+        <div class="field">
+          <label>Lokatsiya (Google Maps silka)</label>
+          <input type="url" id="houseLocation" placeholder="https://maps.google.com/...">
+        </div>
+        <div class="field">
+          <label>Tavsif</label>
+          <textarea id="houseDesc" rows="3"></textarea>
+        </div>
+        <div class="field">
+          <label>Rasmlar (bir nechta yuklash mumkin)</label>
+          <input type="file" id="houseImages" multiple>
+        </div>
+        <div class="form-actions">
+          <button type="button" class="btn-secondary" id="cancelBtn">Bekor qilish</button>
+          <button type="submit" class="btn-primary">Saqlash</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- Batafsil ko‘rish modal -->
+<div class="modal-backdrop" id="detailModal">
+  <div class="modal">
+    <div class="body" id="detailContent"></div>
+    <div class="form-actions">
+      <button id="closeDetail">Yopish</button>
+    </div>
+  </div>
+</div>
+
+<!-- Sotilganlar modal -->
+<div class="modal-backdrop" id="soldModal">
+  <div class="modal">
+    <div class="body">
+      <h2>Sotilgan Uylar</h2>
+      <div id="soldList" class="grid"></div>
+      <div class="form-actions">
+        <button id="closeSold">Yopish</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="trash-btn" id="trashBtn">🗑️</div>
+
+<script src="script.js"></script>
+</body>
+</html>
